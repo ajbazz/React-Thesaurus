@@ -21,4 +21,5 @@ The Node server has the live reload package installed so any saved file changes 
 Demo: http://react.zonewebconsulting.com
 
 
-*This project was developed on top of the Create React App cli, https://github.com/facebookincubator/create-react-app.
+##### This project was developed on top of the Create React App cli, https://github.com/facebookincubator/create-react-app.
+##### The data for this app is retrieved from the free Words API, https://www.wordsapi.com/.
