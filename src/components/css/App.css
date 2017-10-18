@@ -1,0 +1,161 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css";
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  display: -webkit-flex;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.container. footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: none;
+  margin-bottom: 0px !important;
+  /* Make the masthead heading the same height as the navigation */
+}
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 5px;
+}
+
+.page-header {
+  padding-bottom: 0;
+  margin: 0;
+  border-bottom: none;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  text-align: right;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.input-spacing {
+  margin-bottom: 15px;
+}
+
+.searchBox {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.jumbotron {
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  transition-property: top;
+  transition-duration: .7s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.jumbotron h3 {
+  margin: 0;
+  text-transform: capitalize;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.jumbotron .container {
+  padding: 0;
+  padding-left: 10px;
+}
+.jumbotron .container h5 {
+  font-weight: bold;
+  margin-top: 20px;
+}
+.jumbotron .container br {
+  line-height: 20px;
+}
+.jumbotron .container .lead {
+  text-align: left;
+  font-size: 12px;
+  padding-top: 5px;
+  margin: 0;
+  padding-left: 10px;
+}
+.jumbotron .container .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+.jumbotron .container .flexCols {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: left;
+  justify-content: left;
+  flex-wrap: wrap;
+  padding-left: 10px;
+}
+.jumbotron .container .flexCols a {
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 25px;
+  flex-grow: 1;
+  font-size: 12px;
+}
+.jumbotron .container .flexCols :after {
+  content: "";
+  flex: auto;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  .lead {
+    font-size: 12px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
