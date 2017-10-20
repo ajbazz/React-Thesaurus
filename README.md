@@ -13,10 +13,10 @@ Note: To build and run this app, NPM needs to be running on your system.
   - npm start
   
 At this point the Node server is firing up. Once it has started, if you have the Chrome browser installed, it will automatically open the app in a new Chrome tab. 
-If you do not have chrome, in the console it prints out the URL for the local server which is typically http://localhost:3000/. Just paste that url in the browser of your choice.
+If you do not have Chrome, in the console you will see the URL for the local server. Typically it is http://localhost:3000/. Just copy and paste that url in the browser of your choice.
 
-The Node server has the live reload package installed so any saved file changes you have made in your local repo will automatically be redeployed and the browser app will reload with your changes.
-(This is assuming you have Chrome, otherwise you will have to manually reload the page. 
+The Node server has the live reload package installed so any saved file changes you make in your local repo will automatically be redeployed, and the browser will reload with your changes.
+(This is assuming you have Chrome, otherwise you will have to manually reload the page) 
 
 Demo: http://react.zonewebconsulting.com
 
