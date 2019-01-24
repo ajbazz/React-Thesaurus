@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import SearchBox from './SearchBox';
 import Definitions from './Definitions';
 import Synonyms from './Synonyms';
+import Spinner from './images/spin1.gif';
+
 
 class Thesaurus extends Component {
     constructor() {
@@ -10,7 +12,8 @@ class Thesaurus extends Component {
             'currentWord': '',
             'notFound': false,
             'definitions': [],
-            'synonyms': []
+            'synonyms': [],
+            'spinner': false
         }
         this.apiUrl = 'https://wordsapiv1.p.mashape.com/words/';
         this.headers = new Headers();
@@ -35,10 +38,15 @@ class Thesaurus extends Component {
     }
 
     getDefinitions(word) {
+        this.setState({
+            'spinner':true,
+            'currentWord': word,
+            'definitions': [],
+            'synonyms': []})
         fetch(`${this.apiUrl}${word}/definitions`, { method: 'GET', headers: this.headers })
             .then((response) => {
                 if (!response.ok) {
-                    throw Error();
+                     Error();
                 }
                 response.json().then((data) => {
                     this.setState({ 'currentWord': data.word, 'notFound': false });
@@ -55,17 +63,21 @@ class Thesaurus extends Component {
                         for (const [key, value] of Object.entries(result)) {
                             viewResult.push({ key: key, value: value });
                         }
-                        this.setState({ 'definitions': viewResult });
+                        this.setState({ 
+                            'definitions': viewResult,
+                            'spinner': false   
+                        });
                         this.getSynonyms(word);
+                        
                     }
                 });
             }).catch((error) => {
-                console.log('Request failed', error);
                 this.setState({
                     'currentWord': word,
                     'notFound': true,
                     'definitions': [],
-                    'synonyms': []
+                    'synonyms': [],
+                    'spinner': false
                 });
             });
     }
@@ -80,6 +92,7 @@ class Thesaurus extends Component {
 
     render() {
         let haveWord = (this.state.currentWord) ? true : false;
+        let showSpinner = (this.state.spinner && haveWord) ? true : false;
         return (
             <div>
                 <SearchBox getDefs={this.getDefinitions} inputWord={this.state.currentWord} />
@@ -91,7 +104,10 @@ class Thesaurus extends Component {
                                 <Synonyms syns={this.state.synonyms} wordClicked={this.changeWord} />
                             </div>
                         </div>
-                        : null
+                        : <div class="defaultText">Enter a word to lookup the definition and synonyms.</div>
+                    }
+                    {showSpinner ?
+                        <div class="spinner"><img src={Spinner} alt="fetch word" /></div> : null
                     }
                 </div>
             </div>

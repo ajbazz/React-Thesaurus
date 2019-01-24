@@ -11,6 +11,7 @@ class Definitions extends Component {
     render() {
         let wordDefs = this.props.defs;
         let renderDefs = [];
+        let isDefs = (wordDefs.length !== 0) ? true : false
 
         if (wordDefs !== null || wordDefs.length > 0) {
             wordDefs.forEach(function (entry, idx) {
@@ -26,7 +27,7 @@ class Definitions extends Component {
         return (
             <div>
                 {this.props.noResults ? (<div className="text-center">{this.errorMsg}</div>)
-                    : (<span><h3 className="text-left">{this.props.searchWord}</h3> <h5 className="text-left">Definitions</h5></span>)
+                    : (<span style={{ display: isDefs ? 'block' : 'none'}}><h4 className="text-left">{this.props.searchWord}</h4> <h5 className="text-left">Definitions</h5></span>)
                 }
 
                 <div className="lead">

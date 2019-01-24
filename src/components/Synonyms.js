@@ -5,7 +5,7 @@ class Synonyms extends Component {
         const words = this.props.syns || [];
         const clicked = this.props.wordClicked || {};
         const synonyms = words.map((word, index) => {
-            return <a href="" onClick={event => clicked(event)} key={`syns_${index}`}>{word}</a>
+            return <a href="" title={word} onClick={event => clicked(event)} key={`syns_${index}`}>{word}</a>
         })
 
         return (

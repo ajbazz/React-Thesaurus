@@ -5,13 +5,21 @@
   color: #000;
   padding: 0.2em 0;
 }
-
 body {
-  display: -webkit-flex;
+  margin: 0;
   padding: 0;
+  font-family: sans-serif;
+  background-color: #666;
+	background-image: url(../images/codeBack.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment:fixed;
+  background-size: cover;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding-top: .5rem;
 }
 
 .content {
@@ -21,9 +29,44 @@ body {
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
-.container. footer {
+.container, 
+.footer {
   padding-left: 15px;
   padding-right: 15px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.App.container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
+}
+
+.container h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.container h5 {
+  font-size: 1rem;
+}
+
+#linkhome {
+  position: absolute;
+  font-size: 12px;
+  top: 10px;
+  left: 15px;
+  z-index: 999;
+}
+#github, #thatsme {
+  position: absolute;
+  bottom: 10px;  
+  font-size: 12px;
+}
+#thatsme {
+  right: 15px;
 }
 
 /* Custom page header */
@@ -69,6 +112,12 @@ body {
   margin-bottom: 15px;
   margin-top: 15px;
 }
+.searchBox input[type="submit"] {
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: -25px;
+    margin-top: 5px;
+}
 
 .font-weight-bold {
   font-weight: bold;
@@ -76,12 +125,24 @@ body {
 
 .jumbotron {
   text-align: left;
-  padding-top: 10px;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  padding: 10px;
   transition-property: top;
   transition-duration: .7s;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  border: 1px solid #ced4da;
+  position: relative;
+}
+.jumbotron .defaultText {
+  font-size: 14px;
+  text-align: center;
+}
+.jumbotron .spinner {
+  position: absolute;
+  top: 20px;
+  left: 45%;
+}
+.jumbotron .spinner img {
+  width: 48px;
 }
 .jumbotron h3 {
   margin: 0;
@@ -90,11 +151,12 @@ body {
   margin-bottom: 10px;
 }
 .jumbotron .container {
-  padding: 0;
+  padding: 5px;
+  background-color: #fff;
   padding-left: 10px;
+
 }
 .jumbotron .container h5 {
-  font-weight: bold;
   margin-top: 20px;
 }
 .jumbotron .container br {
@@ -125,16 +187,24 @@ body {
   min-height: 25px;
   flex-grow: 1;
   font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .jumbotron .container .flexCols :after {
   content: "";
   flex: auto;
 }
+.jumbotron strong {
+  font-weight: bold;
+  text-transform: capitalize;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 54rem;
+    min-height: 17rem;
   }
 
   .lead {
@@ -147,6 +217,7 @@ body {
   .footer {
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 0;
   }
 
   /* Space out the masthead */
@@ -155,7 +226,7 @@ body {
   }
 
   /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
+  /* .jumbotron {
     border-bottom: 0;
-  }
+  } */
 }
